@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hotels App</title>
+  </head>
+
+  <body>
+    <div class="container main-container">
+      <!-- Header -->
+      <div class="header">
+        <!-- SearchBar -->
+        <div class="container">
+          <form id="searchForm">
+            <i class="fas fa-search"></i>
+            <input
+              class="input-search"
+              type="text"
+              name="search"
+              placeholder="Champs Elysees, Paris"
+              list="searchBar-cities"
+            />
+            <datalist id="searchBar-cities"></datalist>
+            <button class="search-btn" type="submit">Search</button>
+          </form>
+        </div>
+        <!-- end of SearchBar -->
+
+        <!-- Dates/Rooms -->
+        <div class="container dates-rooms">
+          <div class="date-check check-in">
+            <p>Check-in</p>
+            <section class="calendar">
+            <i class="far fa-calendar-check"></i>
+            <input
+              class="input-check-in"
+              type="date"
+              id="checkin"
+              name="checkin"
+              value=""
+            />
+          </section>
+          </div>
+
+          <div class="date-check check-out">
+            <p>Check-out</p>
+            <section class="calendar">
+            <i class="far fa-calendar-times"></i>
+            <input
+              class="input-check-out"
+              type="date"
+              id="checkout"
+              name="checkout"
+              value=""
+            />
+            </section>
+          </div>
+
+          <div class="rooms-options">
+            <i class="fas fa-users icon"></i>
+            <select class="rooms-types-selection">
+              <!-- room option types from data.json -->
+            </select>
+          </div>
+        </div>
+        <!-- end of Dates/Rooms -->
+
+        <!-- Filters -->
+        <div class="filters container">
+          <div class="price">
+            <section id="price-text-value">
+              <span id="price-text">Price</span>
+              <span id="price-value">$</span>
+            </section>
+            <input
+              id="price-bar"
+              type="range"
+              min="0"
+              max="1500"
+              value="1500"
+              step="1"
+            />
+          </div>
+          <div class="property-type">
+            <p>Property type</p>
+            <select name="properties" id="stars-filter">
+              <option value="All">All</option>
+              <option value="0">0 stars</option>
+              <option value="1">1 stars</option>
+              <option value="2">2 stars</option>
+              <option value="3">3 stars</option>
+              <option value="4">4 stars</option>
+              <option value="5">5 stars</option>
+            </select>
+          </div>
+          <div class="guest-rating">
+            <p>Guest rating</p>
+            <select name="ratings" id="ratings-filter" data-do="max">
+              <option value="All">All</option>
+              <option value="0" data-maxrating="2">0 - 2</option>
+              <option value="2" data-maxrating="6">2 - 6</option>
+              <option value="6" data-maxrating="7">6 - 7</option>
+              <option value="7" data-maxrating="8.5">7 - 8.5</option>
+              <option value="8.5" data-maxrating="10">8.5 - 10</option>
+            </select>
+          </div>
+          <div class="hotel-location">
+            <p>Hotel location</p>
+            <select name="location" id="location-filter">
+              <option value="All">All</option>
+            </select>
+          </div>
+          <div class="more-filters">
+            <p>More filters</p>
+            <select name="more-filters" id="extras-filters">
+              <option value="more-filters">Select</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- end of Filters -->
+      </div>
+      <!-- end of Header -->
+
+      <!-- Main Content -->
+
+      <div class="main-content container">
+        <!-- Map and Sorting -->
+        <div id="map-and-sorting">
+          <div id="map">
+            <span id="view-map">View Map</span>
+          </div>
+
+          <div id="sort">
+            <p id="text">Sort By</p>
+            <select name="recommedations" id="recommedations">
+              <option value="recommendations">Our recommedations</option>
+            </select>
+            <i class="fas fa-info-circle"></i>
+          </div>
+        </div>
+        <!-- end of Map and Sorting -->
+
+        <!-- Hotel Cards -->
+        <section id="hotels-section">
+       
+      </section>
+        <!-- end of Hotel Cards -->
+      </div>
+      <!-- end of Main Content -->
+    </div>
+    <!-- end of Main Container -->
+
+    <script src="app.js"></script>
+  </body>
+</html>

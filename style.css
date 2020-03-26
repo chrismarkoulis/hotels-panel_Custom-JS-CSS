@@ -1,0 +1,519 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: normal 16px Arial, Helvetica, sans-serif;
+  line-height: 1.6em;
+}
+
+/* Main Container */
+
+.main-container {
+  background-color: lightgrey;
+  margin: auto;
+  width: 95%;
+
+  margin-top: 15px;
+  overflow: auto;
+  background-color: lightgray;
+}
+
+/* Header */
+
+.header {
+  margin: auto;
+  background-color: #37464e;
+  padding-top: 8px;
+  overflow: auto;
+  width: 100%;
+}
+
+/* Search Bar */
+
+.header #searchForm {
+  margin: auto;
+  background-color: #fff;
+  width: 95%;
+  height: 40px;
+  border-radius: 3px;
+}
+
+#searchForm i {
+  color: grey;
+  padding-left: 5px;
+}
+
+#searchForm input {
+  border: none;
+  width: 80%;
+  padding: 5px 2px;
+  font-size: 18px;
+  height: inherit;
+  color: rgb(128, 128, 128);
+}
+
+#searchForm input:focus {
+  outline: none;
+}
+
+#searchForm #searchBar-cities {
+  background: grey;
+  outline: none;
+}
+
+#searchForm button {
+  border: none;
+  color: white;
+  background-color: rgb(33, 121, 194);
+  width: 10%;
+  height: 40px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+#searchForm button:hover {
+  opacity: 0.8;
+}
+
+/* end of Search Bar */
+
+/* Dates-rooms */
+
+.dates-rooms {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.dates-rooms div {
+  background-color: #fff;
+  padding: 0px 8px;
+  width: 32%;
+  color: grey;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.dates-rooms .date-check input {
+  color: grey;
+  font-size: 17px;
+  max-width: 100%;
+  font-weight: bold;
+  border: none;
+  
+}
+
+.dates-rooms .date-check .calendar {
+  display: flex;
+}
+
+.dates-rooms .date-check .calendar i {
+  align-self: center;
+  padding-right: 3px;
+}
+
+.dates-rooms .date-check input:focus {
+  outline: none;
+  border: none;
+  background-color: #fff;
+}
+
+.dates-rooms .check-in {
+  border-left: solid 8px;
+  border-left-color: rgb(0, 89, 255);
+}
+
+.dates-rooms .check-out {
+  border-left: solid 8px;
+  border-left-color: orange;
+}
+
+.dates-rooms .rooms-options {
+  font-size: 25px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.dates-rooms .rooms-options select {
+  /* font-size: 12px; */
+  color: grey;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.rooms-options select:focus {
+  outline: none;
+}
+
+.dates-rooms .rooms-options i {
+  color: white;
+  text-shadow: 0 0 2px #000;
+  padding-right: 5px;
+}
+
+/* end of Dates-Rooms */
+
+/* Filters */
+
+.header .filters {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  border: none;
+}
+
+.filters .price {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 5px;
+  width: 32%;
+}
+
+.filters .price #price-value {
+  float: right;
+}
+
+.filters .price #price-bar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 5px;
+  border-radius: 5px;
+  background: rgb(0, 89, 255);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(1, rgb(0, 89, 255)),
+    color-stop(1, grey)
+  );
+  outline: none;
+  align-self: end;
+}
+
+.filters .price #price-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: lightgrey;
+}
+
+.filters .price #price-bar::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: lightgrey;
+}
+
+.header .filters div {
+  background-color: #37464e;
+  color: lightgrey;
+  margin-bottom: 5px;
+  border-right: solid 1px;
+  border-right-color: grey;
+}
+
+.header .filters select {
+  background-color: #37464e;
+  color: lightgrey;
+  border: none;
+  max-width: 80px;
+  cursor: pointer;
+}
+
+.header .filters select:focus {
+  outline: none;
+}
+
+.header .filters .more-filters {
+  border: none;
+}
+
+.filters div:not(.price) {
+  width: 15%;
+}
+
+/* end of Filters */
+
+/* end of Header */
+
+/* Main Content */
+
+.main-content {
+  width: 95%;
+  margin: auto;
+  margin-top: 8px;
+}
+
+/* Map and sorting */
+
+.main-content #map-and-sorting {
+  display: flex;
+  /* margin: auto; */
+  justify-content: space-between;
+  margin-top: 8px;
+  border: none;
+  padding: 5px;
+}
+
+.main-content #map-and-sorting #sort {
+  display: grid;
+  grid-template-columns: 55px 168px 5px;
+  gap: 5px;
+  align-self: center;
+}
+
+.main-content #map-and-sorting #sort select {
+  padding: 8px 10px;
+  border-radius: 2px;
+  outline: none;
+}
+
+.main-content #map-and-sorting #sort #text {
+  align-self: center;
+}
+
+.main-content #map-and-sorting #sort i {
+  color: grey;
+  cursor: pointer;
+  align-self: center;
+  font-size: 20px;
+}
+
+#map {
+  display: flex;
+  border-radius: 2px;
+  border: solid #fff;
+  border-width: thin;
+  justify-content: center;
+  background-image: url("./imgs/random-map.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 15%;
+}
+
+#view-map {
+  background-color: #fff;
+  align-self: center;
+  cursor: pointer;
+  padding: 2px;
+  font-size: 11px;
+  font-weight: bold;
+  border: solid black;
+  border-width: thin;
+  opacity: 0.8;
+  border-radius: 3px;
+}
+
+#view-map:hover {
+  opacity: 0.6;
+}
+
+/* end of map and sorting */
+
+/* Hotel cards */
+
+.hotel-card {
+  display: flex;
+  /* flex-wrap: nowrap;
+  flex-direction: row;  */
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 3px 0px;
+  margin: 0px 0px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.hotel-card > div {
+  margin: 0 0px;
+  padding: 0px 3px;
+}
+
+.hotel-card .hotel-display {
+  position: relative;
+  display: flex;
+  width: 25%;
+}
+
+.hotel-card .hotel-display img {
+  width: 100%;
+  height: 240px;
+  /* align-self: center; */
+}
+.hotel-display i.fa-heart {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: grey;
+  text-shadow: 0 0 2px #fff;
+  cursor: pointer;
+}
+
+.hotel-display i.redHeart {
+  color: red;
+}
+
+.hotel-display .img-pagin {
+  position: absolute;
+  left: 5px;
+  bottom: 10px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  color: white;
+  background-color: black;
+  border-radius: 3px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.hotel-info,
+.deals {
+  border-right: solid 1px;
+  border-right-color: lightgrey;
+}
+
+.hotel-card .hotel-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 35%;
+}
+
+.hotel-card .hotel-info i {
+  color: orange;
+}
+
+.hotel-card .hotel-info #hotel-name {
+  font-size: 22px;
+}
+
+.hotel-card .hotel-info #rating {
+  background-color: rgb(50, 105, 4);
+  color: white;
+  padding: 2.5px;
+  border-radius: 2px;
+}
+
+.hotel-card .hotel-info #rating-text {
+  font-weight: bold;
+}
+
+.hotel-card .deals {
+  width: 15%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-card .deals .offer-box {
+  display: flex;
+  flex-direction: column;
+  color: dimgrey;
+}
+
+.hotel-card .deals .offer-box:hover:not(#offer-4) {
+  color: royalblue;
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+.hotel-card .deals #offer-4 {
+  margin-top: 10px;
+  color: black;
+  font-weight: bold;
+  border-top: solid 1px;
+  border-top-color: lightgrey;
+}
+
+.hotel-card .deals #offer-4 i {
+  cursor: pointer;
+}
+
+.hotel-card .more-deals {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25%;
+  text-align: center;
+}
+
+.hotel-card .more-deals .website-offer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.hotel-card .more-deals .view-deal-box {
+  background-color: rgb(72, 156, 4);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  width: 90%;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 5px;
+  align-self: center;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hotel-card .more-deals .view-deal-box:hover {
+  opacity: 0.8;
+}
+
+.hotel-card .more-deals .view-deal-box span {
+  align-self: center;
+}
+
+.hotel-card .more-deals .view-deal-box i {
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+}
+
+.hotel-card .more-deals #hotel-website,
+#hotel-website-price,
+#triple-price {
+  color: rgb(72, 156, 4);
+}
+
+.hotel-card .more-deals #hotel-website-price,
+#triple-price {
+  font-weight: bold;
+}
+
+.hotel-card .more-deals #hotel-website-price {
+  font-size: 20px;
+}
+
+/* end of Hotel cards */
+
+/* end of Main Content */
+
+/* end of Main Container */
